@@ -25,6 +25,7 @@ def plot_scroll_Image(x):
     return fig,tracker
     #Image is input in the form of [#images,512,512,#channels]
 
+
 class IndexTracker(object):
     def __init__(self, ax, X):
         self.ax = ax
@@ -53,6 +54,7 @@ class IndexTracker(object):
         self.im.set_data(self.X[:, :, self.ind])
         self.ax.set_ylabel('slice %s' % self.ind)
         self.im.axes.figure.canvas.draw()
+
 
 if __name__ == '__main__':
     xxx = 1
