@@ -33,7 +33,7 @@ class IndexTracker(object):
 
         self.X = X
         rows, cols, self.slices = X.shape
-        self.ind = np.where(self.X != 0)[-1]
+        self.ind = np.where((np.min(self.X,axis=(0,1))!= np.max(self.X,axis=(0,1))))[-1]
         if len(self.ind) > 0:
             self.ind = self.ind[len(self.ind)//2]
         else:
