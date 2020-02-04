@@ -6,7 +6,7 @@ from ipywidgets import interactive, IntSlider
 
 
 class scroll_bar_class(object):
-
+    ##  Original code provided by Tucker Netherton (@tnetherton), modified by @cecardenas, modularized by @bmanderson
     def __init__(self,numpy_images, title=None):
         self.title = title
         images = np.squeeze(numpy_images)
