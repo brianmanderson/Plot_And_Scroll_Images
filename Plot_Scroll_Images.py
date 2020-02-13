@@ -2,7 +2,10 @@ import copy
 import matplotlib.pyplot as plt
 import numpy as np
 import SimpleITK as sitk
-from ipywidgets import interactive, IntSlider
+try:
+    from ipywidgets import interactive, IntSlider
+except:
+    xxx = 1
 
 
 class scroll_bar_class(object):
