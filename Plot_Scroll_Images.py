@@ -87,7 +87,7 @@ def plot_scroll_Image(x):
             x = np.transpose(x, [1, 2, 0])
     fig, ax = plt.subplots(1, 1)
     if len(x.shape) == 2:
-        x = np.expand_dims(x,axis=0)
+        x = np.expand_dims(x,axis=-1)
     tracker = IndexTracker(ax, x)
     fig.canvas.mpl_connect('scroll_event', tracker.onscroll)
     return fig,tracker
