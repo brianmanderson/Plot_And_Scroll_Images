@@ -12,6 +12,6 @@ plot_scroll_Image(img=x, mask=mask_array, dose=dose_array, alpha=0.3)
 ```
 
 <p align="center">
-    <img src="examples/Example_mask.png" width=300>
-    <img src="examples/Example_dose.png" width=300>
+    <img src="examples/Example_mask.png" height=300>
+    <img src="examples/Example_dose.png" height=300>
 </p>
