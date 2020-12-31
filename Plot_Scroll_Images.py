@@ -1,4 +1,5 @@
 import copy
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import SimpleITK as sitk
@@ -104,7 +105,6 @@ def plot_scroll_Image(img, mask=None, dose=None, alpha=0.3):
 
     img, mask, dose = map(preprocess_input, [img, mask, dose])
 
-    # todo check the previous imposed float format
     if mask is not None:
         mask = np.ma.masked_where(mask.astype(np.int8) == 0, mask.astype(np.int8))
 
@@ -141,7 +141,11 @@ class IndexTracker(object):
         self.im_img = ax.imshow(self.img[:, :, self.ind], cmap='gray')
 
         if self.mask is not None:
-            self.im_mask = ax.imshow(self.mask[:, :, self.ind], cmap='Set1', alpha=alpha)
+            mmin = np.min(self.mask)
+            mmax = np.max(self.mask)
+            LinearSegmentedColormap = matplotlib.colors.LinearSegmentedColormap.from_list
+            mask_cm = LinearSegmentedColormap('colormap', plt.cm.Set1(range(mmin, mmax)), mmax)
+            self.im_mask = ax.imshow(self.mask[:, :, self.ind], cmap=mask_cm, alpha=alpha, vmin=mmin, vmax=mmax)
 
         if self.dose is not None:
             self.im_dose = ax.imshow(self.dose[:, :, self.ind], cmap='jet', alpha=alpha)
