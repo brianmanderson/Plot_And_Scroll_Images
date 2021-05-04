@@ -15,8 +15,6 @@ class scroll_bar_class(object):
     def __init__(self, numpy_images, title=None):
         self.title = title
         images = np.squeeze(numpy_images)
-        if len(images.shape) == 2:
-            images = images[None, ...]
         if images.shape[-1] == 3:
             images = images[..., 1]
         if len(images.shape) == 4:
