@@ -12,13 +12,8 @@ except:
 
 class scroll_bar_class(object):
     ##  Original code provided by Tucker Netherton (@tnetherton), modified by @cecardenas, modularized by @bmanderson
-    def __init__(self, numpy_images, title=None):
+    def __init__(self, images, title=None):
         self.title = title
-        images = np.squeeze(numpy_images)
-        if images.shape[-1] == 3:
-            images = images[..., 1]
-        if len(images.shape) == 4:
-            images = np.argmax(images, axis=-1)
         self.selected_images = sitk.GetImageFromArray(images, isVector=False)
         self.size = self.selected_images.GetSize()
 
@@ -66,8 +61,15 @@ class scroll_bar_class(object):
 
 
 def plot_Image_Scroll_Bar_Image(x):
-    k = scroll_bar_class(x)
-    interactive_plot = interactive(k.update, Z=IntSlider(min=0, max=x.shape[0] - 1))
+    images = np.squeeze(x)
+    if len(images.shape) == 2:
+        images = images[None, ...]
+    if images.shape[-1] == 3:
+        images = images[..., 1]
+    if len(images.shape) == 4:
+        images = np.argmax(images, axis=-1)
+    k = scroll_bar_class(images)
+    interactive_plot = interactive(k.update, Z=IntSlider(min=0, max=images.shape[0] - 1))
     output = interactive_plot.children[-1]
     output.layout.height = '600px'
     return interactive_plot
