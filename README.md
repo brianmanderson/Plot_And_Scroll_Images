@@ -1,6 +1,8 @@
 "# Plot_And_Scroll_Images" 
 Used to plot and scroll through images
 
+manipulated from https://matplotlib.org/2.1.2/gallery/animation/image_slices_viewer.html
+
 ```
 from Plot_Scroll_Images import plot_scroll_Image
 x = some_array
