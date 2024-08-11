@@ -10,7 +10,7 @@ with open('requirements.txt') as f:
     required = f.read().splitlines()
 
 setup(
-    name='DicomRTTool',
+    name='PlotScrollNumpyArrays',
     author='Brian Mark Anderson',
     author_email='markba122@gmail.com',
     version='2.0.0',
