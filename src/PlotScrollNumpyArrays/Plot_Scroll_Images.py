@@ -1,4 +1,4 @@
-from PlotScroll import *
+from .PlotScroll import *
 
 
 if __name__ == '__main__':

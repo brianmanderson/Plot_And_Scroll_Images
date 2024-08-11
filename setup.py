@@ -13,7 +13,7 @@ setup(
     name='PlotScrollNumpyArrays',
     author='Brian Mark Anderson',
     author_email='markba122@gmail.com',
-    version='2.0.1',
+    version='2.0.2',
     description='Services for plotting and viewing',
     long_description=long_description,
     long_description_content_type="text/markdown",
