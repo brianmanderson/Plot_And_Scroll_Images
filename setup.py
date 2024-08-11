@@ -17,8 +17,8 @@ setup(
     description='Services for plotting and viewing',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    package_dir={'Plot_Scroll_Images': 'src/Plot_Scroll_Images'},
-    packages=['Plot_Scroll_Images'],
+    package_dir={'PlotScrollNumpyArrays': 'src/PlotScrollNumpyArrays'},
+    packages=['PlotScrollNumpyArrays'],
     include_package_data=True,
     url='https://github.com/brianmanderson/Dicom_RT_and_Images_to_Mask',
     classifiers=[
