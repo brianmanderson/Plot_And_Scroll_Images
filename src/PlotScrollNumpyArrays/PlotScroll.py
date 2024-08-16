@@ -1,6 +1,5 @@
 import copy
 import matplotlib
-matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 plt.ion()
 import numpy as np
@@ -9,6 +8,7 @@ import SimpleITK as sitk
 try:
     from ipywidgets import interactive, IntSlider
 except:
+    matplotlib.use('TkAgg')
     xxx = 1
 
 
