@@ -3,10 +3,17 @@ __author__ = 'Brian M Anderson'
 
 
 from setuptools import setup
+import os
+
+# Get the directory where the setup.py script is located
+this_directory = os.path.abspath(os.path.dirname(__file__))
+
+# Construct the full path to the requirements.txt file
+requirements_path = os.path.join(this_directory, 'requirements.txt')
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
-with open('requirements.txt') as f:
+with open(requirements_path) as f:
     required = f.read().splitlines()
 
 setup(
