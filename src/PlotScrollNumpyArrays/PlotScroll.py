@@ -8,7 +8,10 @@ import SimpleITK as sitk
 try:
     from ipywidgets import interactive, IntSlider
 except:
-    matplotlib.use('TkAgg')
+    try:
+        matplotlib.use('TkAgg')
+    except:
+        matplotlib.use('Agg')
     xxx = 1
 
 
