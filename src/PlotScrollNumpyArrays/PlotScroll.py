@@ -5,9 +5,12 @@ plt.ion()
 import numpy as np
 import SimpleITK as sitk
 
+load_tkag = False
 try:
     from ipywidgets import interactive, IntSlider
 except:
+    load_tkag = True
+if load_tkag:
     try:
         matplotlib.use('TkAgg')
     except:
